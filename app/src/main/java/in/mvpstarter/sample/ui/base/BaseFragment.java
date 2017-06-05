@@ -54,7 +54,6 @@ public abstract class BaseFragment extends Fragment {
             configPersistentComponent = sComponentsArray.get(mFragmentId);
         }
         mFragmentComponent = configPersistentComponent.fragmentComponent(new FragmentModule(this));
-        mFragmentComponent.inject(this);
     }
 
     @Nullable
@@ -83,7 +82,7 @@ public abstract class BaseFragment extends Fragment {
         super.onDestroy();
     }
 
-   public FragmentComponent getFragmentComponent() {
+    public FragmentComponent fragmentComponent() {
         return mFragmentComponent;
     }
 }
